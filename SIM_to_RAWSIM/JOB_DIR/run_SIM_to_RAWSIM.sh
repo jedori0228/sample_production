@@ -5,6 +5,8 @@ export CMS_PATH=/cvmfs/cms.cern.ch
 source $CMS_PATH/cmsset_default.sh
 export SCRAM_ARCH=slc6_amd64_gcc530
 
+echo "#### ls ####"
+ls
 echo "#### copy grid cert ####"
 cp "x509up_u"* "/tmp/x509up_u"`id -u`
 echo "#### unzip CMSSW ####"
