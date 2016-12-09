@@ -29,5 +29,5 @@ cmsRun SIM_to_RAWSIM.py filelist_GEN-SIM.txt $SECTION filelist_MinBias.txt
 for FILE in RAWSIM.root; do
     EXT=${FILE##*.}
     PREFIX=${FILE%%.${EXT}}
-    xrdcp $FILE root://cms-xrdr.sdfarm.kr:1094//xrd///store/user/jskim/CMSSW_8_0_21_RAWSIM/MajoranaNeutrinoToMuMuMu_M-40//${PREFIX}_${SECTION}.${EXT}
+    xrdcp $FILE root://cms-xrdr.sdfarm.kr:1094//xrd///store/user/<USERNAME>/SOMEWHERE//${PREFIX}_${SECTION}.${EXT}
 done

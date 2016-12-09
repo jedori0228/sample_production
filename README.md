@@ -32,6 +32,8 @@ cd JOB_DIR
   * change "queue 10" to total # of input files
   * change "../x509up_u\<ID\>" to your grid certificate located in $CMSSW_BASE/src/sample_production/SIM_to_RAWSIM/
     * ID can be obatained, using "id -u" in command line
+* Fix run_SIM_to_RAWSIM.sh
+  * change "\<USERNAME\>/SOMEWHERE" to output directory
 ```bash
 condor_submit submit.jds
 ```
