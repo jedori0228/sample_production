@@ -19,6 +19,7 @@ git checkout -b CMSSW_8_0_21 origin/CMSSW_8_0_21
 ```bash
 cd SIM_to_RAWSIM
 source setup.sh
+voms-proxy-init --voms cms -valid 24:00
 ```
 * Make a txt file of input lhe file path
   * (SE)  /store/<SOMEWHERE>
@@ -29,6 +30,8 @@ cd JOB_DIR
 * Fix submit.jds
   * change "filelist_GEN-SIM.txt" to your input filelist
   * change "queue 10" to total # of input files
+  * change "../x509up_u\<ID\>" to your grid certificate located in $CMSSW_BASE/src/sample_production/SIM_to_RAWSIM/
+    * ID can be obatained, using "id -u" in command line
 ```bash
 condor_submit submit.jds
 ```
