@@ -47,7 +47,7 @@ for i in range(0,30):
   pulists.append( pickrand )
 
 process.maxEvents = cms.untracked.PSet(
-    input = cms.untracked.int32(5)
+    input = cms.untracked.int32(-1)
 )
 
 # Input source
