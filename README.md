@@ -15,7 +15,7 @@ cd sample_production.git
 git checkout -b CMSSW_8_0_21 origin/CMSSW_8_0_21
 ```
 
-# SIM_to_RAWSIM
+# SIM to RAWSIM
 ```bash
 cd SIM_to_RAWSIM
 source setup.sh
@@ -36,7 +36,7 @@ cd JOB_DIR
 condor_submit submit.jds
 ```
 
-# RAWSIM_to_AODSIM
+# RAWSIM to AODSIM
 ```bash
 cd RAWSIM_to_AODSIM
 ```
@@ -48,7 +48,7 @@ cd RAWSIM_to_AODSIM
 source submit_batch.sh
 ```
 
-# AODSIM_to_MiniAOD
+# AODSIM to MiniAOD
 ```bash
 cd AODSIM_to_MiniAOD
 ```
