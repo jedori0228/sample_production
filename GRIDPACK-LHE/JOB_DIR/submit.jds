@@ -1,0 +1,12 @@
+executable = run_GRIDPACK_to_LHE
+universe   = vanilla
+arguments  = $(Process)
+requirements = OpSysMajorVer == 6
+log = condor.log
+getenv     = True
+should_transfer_files = YES
+when_to_transfer_output = ON_EXIT
+output = job_$(Process).log
+error = job_$(Process).err
+transfer_input_files = <GRIDPACK_FILEPATH>, ../CMSSW_7_1_16_patch2.tar.gz
+queue 100
