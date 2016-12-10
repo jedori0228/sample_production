@@ -8,5 +8,5 @@ should_transfer_files = YES
 when_to_transfer_output = ON_EXIT
 output = job_$(Process).log
 error = job_$(Process).err
-transfer_input_files = ../filelist_GEN-SIM.txt, ../CMSSW_8_0_21.tar.gz, ../SIM_to_RAWSIM.py, ../filelist_MinBias.txt, ../x509up_u<ID>
+transfer_input_files = /tmp/x509up_u<ID>, ../filelist_GEN-SIM.txt, /cms/scratch/SNU/Moriond17_Production/CMSSW_8_0_21.tar.gz, ../SIM_to_RAWSIM.py, /cms/scratch/SNU/Moriond17_Production/filelist_MinBias.txt
 queue 10

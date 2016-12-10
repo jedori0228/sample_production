@@ -18,7 +18,6 @@ git checkout -b CMSSW_8_0_21 origin/CMSSW_8_0_21
 # SIM to RAWSIM
 ```bash
 cd SIM_to_RAWSIM
-source setup.sh
 voms-proxy-init --voms cms -valid 24:00
 ```
 * Make a txt file of input lhe file path
@@ -28,10 +27,10 @@ voms-proxy-init --voms cms -valid 24:00
 cd JOB_DIR
 ```
 * Fix submit.jds
+  * change "/tmp/x509up_u\<ID\>" to your grid certificate, located in /tmp/
+    * ID can be obatained, using "id -u" in command line
   * change "filelist_GEN-SIM.txt" to your input filelist
   * change "queue 10" to total # of input files
-  * change "../x509up_u\<ID\>" to your grid certificate located in $CMSSW_BASE/src/sample_production/SIM_to_RAWSIM/
-    * ID can be obatained, using "id -u" in command line
 * Fix run_SIM_to_RAWSIM.sh
   * change "\<USERNAME\>/SOMEWHERE" to output directory
 ```bash
