@@ -50,7 +50,7 @@ should_transfer_files = YES
 when_to_transfer_output = ON_EXIT
 output = job_$(Process).log
 error = job_$(Process).err
-transfer_input_files = /cms/scratch/jskim/gridpacks/{0}_gridpacks/{1}_5f_LO_tarball.tar.xz, ../CMSSW_7_1_16_patch2.tar.gz
+transfer_input_files = /cms/scratch/jskim/gridpacks/{0}_gridpacks/{1}_5f_LO_tarball.tar.xz, /cms/scratch/SNU/Moriond17_Production/CMSSW_7_1_16_patch2.tar.gz
 queue 100""".format(channel,dirname)
   submitjds.close()
 
