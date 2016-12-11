@@ -5,7 +5,7 @@ Moriond17 Campaign Production
 ```bash
 export VO_CMS_SW_DIR=/cvmfs/cms.cern.ch
 source $VO_CMS_SW_DIR/cmsset_default.sh
-export SCRAM_ARCH=SCRAM_ARCH=slc6_amd64_gcc530
+export SCRAM_ARCH=slc6_amd64_gcc530
 scram p CMSSW CMSSW_8_0_21
 cd CMSSW_8_0_21/src
 cmsenv
