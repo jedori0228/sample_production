@@ -14,7 +14,7 @@ for mass in masses:
   for line in cfg_skleton:
     if "LHE_INPUTS_ARE_HERE" in line:
       for lheindex in range(0, 1):
-        output_cfg.write("      'root://cluster142.knu.ac.kr//store/user/jskim/lhe/MajoranaNeutrinoTo"+channel+"_M-"+str(mass)+"/cmsgrid_final_00"+str(lheindex)+".lhe',\n")
+        output_cfg.write("      'root://cluster142.knu.ac.kr//store/user/jskim/lhe/"+channel+"_M-"+str(mass)+"/cmsgrid_final_00"+str(lheindex)+".lhe',\n")
     else:
       output_cfg.write(line)
   output_cfg.close()
@@ -23,11 +23,11 @@ for mass in masses:
   output_crabpy = open('crab_'+channel+'_'+str(mass)+'/crab_'+channel+'_'+str(mass)+'.py', 'w')
   for line in crabpy_skeleton:
     if "##requestName##" in line:
-      output_crabpy.write("config.General.requestName = 'MajoranaNeutrinoTo"+channel+"_M-"+str(mass)+"_CMSSW_7_1_18_GEN-SIM'\n")
+      output_crabpy.write("config.General.requestName = '"+channel+"_M-"+str(mass)+"_CMSSW_7_1_18_GEN-SIM'\n")
     elif "##psetName##" in line:
       output_crabpy.write("config.JobType.psetName = 'GEN-SIM_crab_"+channel+"_"+str(mass)+".py'\n")
     elif "##outputPrimaryDataset##" in line:
-      output_crabpy.write("config.Data.outputPrimaryDataset = 'MajoranaNeutrinoTo"+channel+"_M-"+str(mass)+"'\n")
+      output_crabpy.write("config.Data.outputPrimaryDataset = '"+channel+"_M-"+str(mass)+"'\n")
     else:
       output_crabpy.write(line)
   output_crabpy.close()
