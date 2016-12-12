@@ -28,6 +28,8 @@ source submit_batch.sh
 ```
 
 #GEN-SIM (KNU TIER 2 CRAB3)
+* Grid Certificate
+  * Follow this Twiki instructions : [HERE](https://twiki.cern.ch/twiki/bin/view/CMSPublic/WorkBookStartingGrid#ObtainingCert)
 * CRAB3 setup
 ```bash
 source /cvmfs/cms.cern.ch/crab3/crab.sh
