@@ -27,31 +27,31 @@ cd GEN-SIM
 source submit_batch.sh
 ```
 
-#GEN-SIM (KNU TIER 2)
+#GEN-SIM (KNU TIER 2 CRAB3)
 * CRAB3 setup
 ```bash
 source /cvmfs/cms.cern.ch/crab3/crab.sh
 ```
 
-* Change two files in GEN-SIM/CRAB_KNU_TIER2/skeletons/
-  * GEN-SIM_crab_skeleton.py
-    * CRAB recommends using only one LHE file as an input LHESource. So, if you want to make 100k event, generate a lhe with containing 100k events.
+* Change two files in GEN-SIM/CRAB_KNU_TIER2/skeletons/  
+* GEN-SIM_crab_skeleton.py :  
+  * CRAB recommends using only one LHE file as an input LHESource.  
+So, if you want to genearte 100k event, generate a lhe file containing (more than) 100k events.
+  * Then, place the lhe file at SE.
+  * If your lhe file is in KNU TIER 2, filename should be  
+'root://cluster142.knu.ac.kr//store/user/\<USER\>/\<SOMEWHERE\>'
+  * If your lhe file is in KISTI TIER 3, filename should be  
+'root://cms-xrdr.sdfarm.kr:1094///xrd//store/user/\<USER\>/\<SOMEWHERE\>'
+
 ```python
 ...
-# Input source
 process.source = cms.Source("LHESource",
     fileNames = cms.untracked.vstring(
 ##LHE_INPUTS_ARE_HERE## <- your lhe file path
-    ),
-    inputCommands = cms.untracked.vstring('keep *', 
-        'drop LHEXMLStringProduct_*_*_*'),
-    dropDescendantsOfDroppedBranches = cms.untracked.bool(False)
-)
+    )
 ...
-```
-
-    * Below, I assume your cfg file name is GEN-SIM_crab.py
-  * crab_skeleton.py : 
+```  
+* crab_skeleton.py : 
 ```python
 ...
 ##requestName## E.g., config.General.requestName = 'MajoranaNeutrinoToMuMuMu_M-40_CMSSW_7_1_18_GEN-SIM'
@@ -60,9 +60,7 @@ process.source = cms.Source("LHESource",
 ...
 ##outputPrimaryDataset## E.g., config.Data.outputPrimaryDataset = 'MajoranaNeutrinoToMuMuMu_M-40'
 ...
-```
-
-    * Below, I assume your crab cfg file name is crab.py
+```  
 ```bash
 crab submit -c crab.py
-```
+```  
