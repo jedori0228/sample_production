@@ -5,6 +5,7 @@ config = config()
 ##requestName## E.g., config.General.requestName = 'MajoranaNeutrinoToMuMuMu_M-40_CMSSW_7_1_18_GEN-SIM'
 config.General.workArea = 'crab_projects'
 config.General.transferLogs = True
+config.General.transferOutputs = True
 
 config.JobType.pluginName = 'PrivateMC'
 ##psetName## E.g., config.JobType.psetName = 'GEN-SIM_crab.py'
