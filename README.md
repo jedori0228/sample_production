@@ -50,7 +50,7 @@ condor_submit submit.jds
 ...
 ```
 * If you have your GEN-SIM Datasetname in google spreadsheet format like [this](https://docs.google.com/spreadsheets/d/1aUoEq40MjpZ4LpcEoxXdd9-prrDmJkWWgeKPLPsmBhk/edit?usp=sharing), you can make use of the script to craete crab job directory
-  * **File**->**Publish to the web**-> Change **Web page** to **Comma-separated values (.csv)**->**Publish**->Copy the link
+  * **File** -> **Publish to the web** -> Change **Web page** to **Comma-separated values (.csv)** -> **Publish** -> Copy the link
   * SIM_to_RAWSIM/CRAB_KNU_TIER2/make_crab_cfg.py :
 ```python
     url = 'https://docs.google.com/spreadsheets/d/1aUoEq40MjpZ4LpcEoxXdd9-prrDmJkWWgeKPLPsmBhk/pub?gid=0&single=true&output=csv'
@@ -81,7 +81,7 @@ source submit_batch.sh
 ...
 ```
 * If you have your RAWSIM Datasetname in google spreadsheet format like [this](https://docs.google.com/spreadsheets/d/1aUoEq40MjpZ4LpcEoxXdd9-prrDmJkWWgeKPLPsmBhk/edit?usp=sharing), you can make use of the script to craete crab job directory
-  * **File**->**Publish to the web**-> Change **Web page** to **Comma-separated values (.csv)**->**Publish**->Copy the link
+  * **File** -> **Publish to the web** -> Change **Web page** to **Comma-separated values (.csv)** -> **Publish** -> Copy the link
   * RAWSIM_to_AODSIM/CRAB_KNU_TIER2/make_crab_cfg.py :
 ```python
     url = 'https://docs.google.com/spreadsheets/d/1aUoEq40MjpZ4LpcEoxXdd9-prrDmJkWWgeKPLPsmBhk/pub?gid=0&single=true&output=csv'
