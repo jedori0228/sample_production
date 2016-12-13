@@ -15,7 +15,7 @@ cd sample_production.git
 git checkout -b CMSSW_8_0_21 origin/CMSSW_8_0_21
 ```
 
-# SIM to RAWSIM
+# SIM to RAWSIM (KISTI condor)
 ```bash
 cd SIM_to_RAWSIM
 voms-proxy-init --voms cms -valid 24:00
@@ -37,7 +37,22 @@ cd JOB_DIR
 condor_submit submit.jds
 ```
 
-# RAWSIM to AODSIM
+# SIM to RAWSIM (KNU TIER 2 CRAB3)
+
+* **SIM_to_RAWSIM/CRAB_KNU_TIER2/skeletons/crab_skeleton.py** :
+```python
+...
+##requestName## E.g., config.General.requestName = 'MajoranaNeutrinoToMuMuMu_M-40_CMSSW_8_0_21_RAWSIM'
+...
+##psetName## E.g., config.JobType.psetName = 'SIM_to_RAWSIM.py'
+...
+##inputDataset## E.g., config.Data.inputDataset = '/MajoranaNeutrinoToMuMuMu_M-150/jskim-CMSSW_7_1_18_GEN-SIM-c2345211336d5844e3ea1a8a7fbfc845/USER'
+...
+```
+* If you have your GEN-SIM Datasetname in google spreadsheet format like [this](https://docs.google.com/spreadsheets/d/1aUoEq40MjpZ4LpcEoxXdd9-prrDmJkWWgeKPLPsmBhk/edit#gid=0), you can make use of the script to craete crab job directory
+  * SIM_to_RAWSIM/CRAB_KNU_TIER2/make_crab_cfg.py
+
+# RAWSIM to AODSIM (KISTI condor)
 ```bash
 cd RAWSIM_to_AODSIM
 ```
@@ -49,7 +64,7 @@ cd RAWSIM_to_AODSIM
 source submit_batch.sh
 ```
 
-# AODSIM to MiniAOD
+# AODSIM to MiniAOD (KISTI condor)
 ```bash
 cd AODSIM_to_MiniAOD
 ```
