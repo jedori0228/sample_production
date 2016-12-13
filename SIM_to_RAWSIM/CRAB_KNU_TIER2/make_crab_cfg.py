@@ -15,7 +15,7 @@ for mass in masses:
   for line in cfg_skleton:
     if "##MINBIAS_HERE##" in line:
 
-      lines = open('/u/user/jskim/scratch/filelist_MinBias.txt').readlines()
+      lines = open('/pnfs/knu.ac.kr/data/cms/store/user/jskim/filelist_MinBias.txt').readlines()
       total_pu_lines=-1
       for line in lines:
         total_pu_lines+=1
