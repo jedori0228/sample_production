@@ -49,8 +49,12 @@ condor_submit submit.jds
 ##inputDataset## E.g., config.Data.inputDataset = '/MajoranaNeutrinoToMuMuMu_M-150/jskim-CMSSW_7_1_18_GEN-SIM-c2345211336d5844e3ea1a8a7fbfc845/USER'
 ...
 ```
-* If you have your GEN-SIM Datasetname in google spreadsheet format like [this](https://docs.google.com/spreadsheets/d/1aUoEq40MjpZ4LpcEoxXdd9-prrDmJkWWgeKPLPsmBhk/edit#gid=0), you can make use of the script to craete crab job directory
-  * SIM_to_RAWSIM/CRAB_KNU_TIER2/make_crab_cfg.py
+* If you have your GEN-SIM Datasetname in google spreadsheet format like [this](https://docs.google.com/spreadsheets/d/1aUoEq40MjpZ4LpcEoxXdd9-prrDmJkWWgeKPLPsmBhk/edit?usp=sharing), you can make use of the script to craete crab job directory
+  * **File**->**Publish to the web**-> Change **Web page** to **Comma-separated values (.csv)**->**Publish**->Copy the link
+  * SIM_to_RAWSIM/CRAB_KNU_TIER2/make_crab_cfg.py :
+```python
+    url = 'https://docs.google.com/spreadsheets/d/1aUoEq40MjpZ4LpcEoxXdd9-prrDmJkWWgeKPLPsmBhk/pub?gid=0&single=true&output=csv'
+```
 
 # RAWSIM to AODSIM (KISTI condor)
 ```bash
