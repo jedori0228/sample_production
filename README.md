@@ -13,6 +13,8 @@ git-cms-init
 git clone git@github.com:jedori0228/sample_production.git
 cd sample_production
 git checkout -b CMSSW_7_1_18 origin/CMSSW_7_1_18
+## To Use CRAB3,
+source /cvmfs/cms.cern.ch/crab3/crab.sh
 ```
 
 #GEN-SIM (KISTI condor)
