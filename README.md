@@ -11,7 +11,7 @@ cd CMSSW_8_0_21/src
 cmsenv
 git-cms-init
 git clone git@github.com:jedori0228/sample_production.git
-cd sample_production.git
+cd sample_production
 git checkout -b CMSSW_8_0_21 origin/CMSSW_8_0_21
 ```
 
