@@ -6,8 +6,6 @@ masses = [5, 10, 20, 30, 40, 50, 60, 70, 90, 100, 150, 200, 300, 400, 500, 700, 
 
 import csv
 from urllib import urlopen
-## https://docs.google.com/spreadsheets/d/1aUoEq40MjpZ4LpcEoxXdd9-prrDmJkWWgeKPLPsmBhk/edit#gid=0 ##
-
 
 for mass in masses:
   os.system('mkdir crab_'+channel+'_'+str(mass))
@@ -37,8 +35,9 @@ for mass in masses:
       output_crabpy.write("config.JobType.psetName = 'SIM_to_RAWSIM_crab_"+channel+"_"+str(mass)+".py'\n")
     elif "##inputDataset##" in line:
 
-      ## Fill DBS like below! ##
-      ## https://docs.google.com/spreadsheets/d/1aUoEq40MjpZ4LpcEoxXdd9-prrDmJkWWgeKPLPsmBhk/edit#gid=0 ##
+      ## Fill DBS like below!
+      ## shared link : https://docs.google.com/spreadsheets/d/1aUoEq40MjpZ4LpcEoxXdd9-prrDmJkWWgeKPLPsmBhk/edit#gid=0
+      ## publish your spreadsheet to csv foramt, and put the link below (url = '<LINK>')
 
       url = 'https://docs.google.com/spreadsheets/d/1aUoEq40MjpZ4LpcEoxXdd9-prrDmJkWWgeKPLPsmBhk/pub?gid=0&single=true&output=csv'
       cr = csv.reader(urlopen(url).readlines())

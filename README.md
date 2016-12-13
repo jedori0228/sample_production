@@ -68,6 +68,25 @@ cd RAWSIM_to_AODSIM
 source submit_batch.sh
 ```
 
+# RAWSIM to AODSIM (KNU TIER 2 CRAB3)
+
+* **RAWSIM_to_AODSIM/KNU_TIRE2_CRAB3/skeletons/crab_skeleton.py** :
+```python
+...
+##requestName## E.g., config.General.requestName = 'MajoranaNeutrinoToMuMuMu_M-40_CMSSW_8_0_21_AODSIM'
+...
+##psetName## E.g., config.JobType.psetName = 'RAWSIM_to_AODSIM.py'
+...
+##inputDataset## E.g., config.Data.inputDataset = '/MajoranaNeutrinoToMuMuMu_M-5/jskim-CMSSW_8_0_21_RAWSIM-16ca0fac1b892ff3c3d45d801745cbbf/USER'
+...
+```
+* If you have your RAWSIM Datasetname in google spreadsheet format like [this](https://docs.google.com/spreadsheets/d/1aUoEq40MjpZ4LpcEoxXdd9-prrDmJkWWgeKPLPsmBhk/edit?usp=sharing), you can make use of the script to craete crab job directory
+  * **File**->**Publish to the web**-> Change **Web page** to **Comma-separated values (.csv)**->**Publish**->Copy the link
+  * RAWSIM_to_AODSIM/CRAB_KNU_TIER2/make_crab_cfg.py :
+```python
+    url = 'https://docs.google.com/spreadsheets/d/1aUoEq40MjpZ4LpcEoxXdd9-prrDmJkWWgeKPLPsmBhk/pub?gid=0&single=true&output=csv'
+```
+
 # AODSIM to MiniAOD (KISTI condor)
 ```bash
 cd AODSIM_to_MiniAOD

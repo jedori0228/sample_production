@@ -7,13 +7,12 @@ masses = [30]
 
 import csv
 from urllib import urlopen
-## https://docs.google.com/spreadsheets/d/1aUoEq40MjpZ4LpcEoxXdd9-prrDmJkWWgeKPLPsmBhk/edit#gid=0 ##
 
 
 for mass in masses:
   os.system('mkdir crab_'+channel+'_'+str(mass))
 
-  os.system('cp RAWSIM_to_AODSIM.py crab_'+channel+'_'+str(mass)+'/RAWSIM_to_AODSIM_crab_'+channel+'_'+str(mass)+'.py')
+  os.system('cp skeletons/RAWSIM_to_AODSIM.py crab_'+channel+'_'+str(mass)+'/RAWSIM_to_AODSIM_crab_'+channel+'_'+str(mass)+'.py')
 
   crabpy_skeleton = open('skeletons/crab_skeleton.py').readlines()
   output_crabpy = open('crab_'+channel+'_'+str(mass)+'/crab_'+channel+'_'+str(mass)+'.py', 'w')
@@ -24,8 +23,9 @@ for mass in masses:
       output_crabpy.write("config.JobType.psetName = 'RAWSIM_to_AODSIM_crab_"+channel+"_"+str(mass)+".py'\n")
     elif "##inputDataset##" in line:
 
-      ## Fill DBS like below! ##
-      ## https://docs.google.com/spreadsheets/d/1aUoEq40MjpZ4LpcEoxXdd9-prrDmJkWWgeKPLPsmBhk/edit#gid=0 ##
+      ## Fill DBS like below!
+      ## shared link : https://docs.google.com/spreadsheets/d/1aUoEq40MjpZ4LpcEoxXdd9-prrDmJkWWgeKPLPsmBhk/edit#gid=0
+      ## publish your spreadsheet to csv foramt, and put the link below (url = '<LINK>')
 
       url = 'https://docs.google.com/spreadsheets/d/1aUoEq40MjpZ4LpcEoxXdd9-prrDmJkWWgeKPLPsmBhk/pub?gid=0&single=true&output=csv'
       cr = csv.reader(urlopen(url).readlines())
