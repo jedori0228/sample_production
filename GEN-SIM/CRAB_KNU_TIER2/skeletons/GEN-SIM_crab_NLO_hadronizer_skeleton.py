@@ -2,7 +2,7 @@
 # using: 
 # Revision: 1.19 
 # Source: /local/reps/CMSSW/CMSSW/Configuration/Applications/python/ConfigBuilder.py,v 
-# with command line options: Hadronizer_TuneCUETP8M1_13TeV_aMCatNLO_0p_LHE_pythia8_cff.py --filein input.lhe --fileout gensim.root --mc --eventcontent RAWSIM --customise SLHCUpgradeSimulations/Configuration/postLS1Customs.customisePostLS1,Configuration/DataProcessing/Utils.addMonitoring --datatier GEN-SIM --conditions MCRUN2_71_V1::All --beamspot Realistic50ns13TeVCollision --step GEN,SIM --magField 38T_PostLS1 --python_filename GEN-SIM.py --no_exec -n 231
+# with command line options: Configuration/GenProduction/python/ThirteenTeV/Hadronizer_TuneCUETP8M1_13TeV_aMCatNLO_0p_LHE_pythia8_cff.py --filein input.lhe --fileout gensim.root --mc --eventcontent RAWSIM --customise SLHCUpgradeSimulations/Configuration/postLS1Customs.customisePostLS1,Configuration/DataProcessing/Utils.addMonitoring --datatier GEN-SIM --conditions MCRUN2_71_V1::All --beamspot Realistic50ns13TeVCollision --step GEN,SIM --magField 38T_PostLS1 --python_filename GEN-SIM.py --no_exec -n 231
 import FWCore.ParameterSet.Config as cms
 
 process = cms.Process('SIM')
@@ -44,7 +44,7 @@ process.options = cms.untracked.PSet(
 # Production Info
 process.configurationMetadata = cms.untracked.PSet(
     version = cms.untracked.string('$Revision: 1.19 $'),
-    annotation = cms.untracked.string('Hadronizer_TuneCUETP8M1_13TeV_aMCatNLO_0p_LHE_pythia8_cff.py nevts:231'),
+    annotation = cms.untracked.string('Configuration/GenProduction/python/ThirteenTeV/Hadronizer_TuneCUETP8M1_13TeV_aMCatNLO_0p_LHE_pythia8_cff.py nevts:231'),
     name = cms.untracked.string('Applications')
 )
 
@@ -71,6 +71,47 @@ process.genstepfilter.triggerConditions=cms.vstring("generation_step")
 from Configuration.AlCa.GlobalTag import GlobalTag
 process.GlobalTag = GlobalTag(process.GlobalTag, 'MCRUN2_71_V1::All', '')
 
+process.generator = cms.EDFilter("Pythia8HadronizerFilter",
+    pythiaPylistVerbosity = cms.untracked.int32(1),
+    filterEfficiency = cms.untracked.double(1.0),
+    pythiaHepMCVerbosity = cms.untracked.bool(False),
+    comEnergy = cms.double(13000.0),
+    maxEventsToPrint = cms.untracked.int32(1),
+    PythiaParameters = cms.PSet(
+        pythia8CommonSettings = cms.vstring('Tune:preferLHAPDF = 2', 
+            'Main:timesAllowErrors = 10000', 
+            'Check:epTolErr = 0.01', 
+            'Beams:setProductionScalesFromLHEF = off', 
+            'SLHA:keepSM = on', 
+            'SLHA:minMassSM = 1000.', 
+            'ParticleDecays:limitTau0 = on', 
+            'ParticleDecays:tau0Max = 10', 
+            'ParticleDecays:allowPhotonRadiation = on'),
+        pythia8CUEP8M1Settings = cms.vstring('Tune:pp 14', 
+            'Tune:ee 7', 
+            'MultipartonInteractions:pT0Ref=2.4024', 
+            'MultipartonInteractions:ecmPow=0.25208', 
+            'MultipartonInteractions:expPow=1.6'),
+        pythia8aMCatNLOSettings = cms.vstring('SpaceShower:pTmaxMatch = 1', 
+            'SpaceShower:pTmaxFudge = 1', 
+            'SpaceShower:MEcorrections = off', 
+            'TimeShower:pTmaxMatch = 1', 
+            'TimeShower:pTmaxFudge = 1', 
+            'TimeShower:MEcorrections = off', 
+            'TimeShower:globalRecoil = on', 
+            'TimeShower:limitPTmaxGlobal = on', 
+            'TimeShower:nMaxGlobalRecoil = 1', 
+            'TimeShower:globalRecoilMode = 2', 
+            'TimeShower:nMaxGlobalBranch = 1'),
+        processParameters = cms.vstring('TimeShower:nPartonsInBorn = 0'),
+        parameterSets = cms.vstring('pythia8CommonSettings', 
+            'pythia8CUEP8M1Settings', 
+            'pythia8aMCatNLOSettings', 
+            'processParameters')
+    )
+)
+
+
 # Path and EndPath definitions
 process.generation_step = cms.Path(process.pgen)
 process.simulation_step = cms.Path(process.psim)
@@ -80,6 +121,9 @@ process.RAWSIMoutput_step = cms.EndPath(process.RAWSIMoutput)
 
 # Schedule definition
 process.schedule = cms.Schedule(process.generation_step,process.genfiltersummary_step,process.simulation_step,process.endjob_step,process.RAWSIMoutput_step)
+# filter all path with the production filter sequence
+for path in process.paths:
+	getattr(process,path)._seq = process.generator * getattr(process,path)._seq 
 
 # customisation of the process.
 

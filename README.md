@@ -37,8 +37,17 @@ source submit_batch.sh
 source /cvmfs/cms.cern.ch/crab3/crab.sh
 ```
 
-* Change two files in GEN-SIM/CRAB_KNU_TIER2/skeletons/  
-* GEN-SIM_crab_skeleton.py :  
+```bash
+cd GEN-SIM/CRAB_KNU_TIER2/skeletons/  
+```
+* GEN-SIM_crab_skeleton.py : LO, no jet-matching Hadronizer
+* GEN-SIM_crab_NLO_hadronizer_skeleton.py : NLO, no jet-matching Hadronizer
+* If you want to use NLO, no jet-matching Hadronizer, or other hadronizers that are not included in default CMSSW (Configuration/GenProduction/python/), you have to add them, and compile.  
+E.g.,  
+```bash
+curl -s https://raw.githubusercontent.com/cms-sw/genproductions/master/python/ThirteenTeV/Hadronizer_TuneCUETP8M1_13TeV_aMCatNLO_0p_LHE_pythia8_cff.py  --retry 2 --create-dirs -o Configuration/GenProduction/python/ThirteenTeV/Hadronizer_TuneCUETP8M1_13TeV_aMCatNLO_0p_LHE_pythia8_cff.py 
+scram b -j 10
+```
   * CRAB recommends using only one LHE file as an input LHESource.  
 So, if you want to genearte 100k event, generate a lhe file containing (more than) 100k events.
   * Then, place the lhe file at SE.
@@ -47,6 +56,7 @@ So, if you want to genearte 100k event, generate a lhe file containing (more tha
   * If your lhe file is in KISTI TIER 3, filename should be  
 'root://cms-xrdr.sdfarm.kr:1094///xrd//store/user/\<USER\>/\<SOMEWHERE\>'
 
+* **GEN-SIM_crab_skeleton.py** :
 ```python
 ...
 process.source = cms.Source("LHESource",
@@ -55,7 +65,7 @@ process.source = cms.Source("LHESource",
     )
 ...
 ```  
-* crab_skeleton.py : 
+* **crab_skeleton.py** : 
 ```python
 ...
 ##requestName## E.g., config.General.requestName = 'MajoranaNeutrinoToMuMuMu_M-40_CMSSW_7_1_18_GEN-SIM'
