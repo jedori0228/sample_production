@@ -99,3 +99,23 @@ cd AODSIM_to_MiniAOD
 * Fix submit_batch.sh file properly
 ```bash
 source submit_batch.sh
+
+# AODSIM to MiniAOD (KNU TIER 2 CRAB3)
+
+* **AODSIM to MiniAOD/KNU_TIRE2_CRAB3/skeletons/crab_skeleton.py** :
+```python
+...
+##requestName## E.g., config.General.requestName = 'MajoranaNeutrinoToMuMuMu_M-40_CMSSW_8_0_21_MiniAOD'
+...
+##psetName## E.g., config.JobType.psetName = 'AODSIM_to_MiniAOD.py'
+...
+##inputDataset## E.g., config.Data.inputDataset = '/MajoranaNeutrinoToMuMuMu_M-5/jskim-CMSSW_8_0_21_AODSIM-e82b9d23b21065f4c0a0b29f84898dde/USER'
+...
+```
+* If you have your RAWSIM Datasetname in google spreadsheet format like [this](https://docs.google.com/spreadsheets/d/1aUoEq40MjpZ4LpcEoxXdd9-prrDmJkWWgeKPLPsmBhk/edit?usp=sharing), you can make use of the script to craete crab job directory
+  * **File** -> **Publish to the web** -> Change **Web page** to **Comma-separated values (.csv)** -> **Publish** -> Copy the link
+  * RAWSIM_to_AODSIM/CRAB_KNU_TIER2/make_crab_cfg.py :
+```python
+    url = 'https://docs.google.com/spreadsheets/d/1aUoEq40MjpZ4LpcEoxXdd9-prrDmJkWWgeKPLPsmBhk/pub?gid=0&single=true&output=csv'
+```
+
