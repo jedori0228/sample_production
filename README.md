@@ -1,10 +1,11 @@
-# Clone following branches
-# Moriond17
-  * CMSSW_7_1_16_patch2
-    * GRIDPACK-LHE
-  * CMSSW_7_1_18
-    * GEN-SIM
-  * CMSSW_8_0_21
-    * SIM to RAWSIM
-    * RAWSIM to AODSIM
-    * AODSIM to MiniAOD
+RunIIFall17MiniAOD-94X_mc2017_realistic
+====
+
+# Setup
+```bash
+export VO_CMS_SW_DIR=/cvmfs/cms.cern.ch
+source $VO_CMS_SW_DIR/cmsset_default.sh
+export SCRAM_ARCH=slc6_amd64_gcc630
+scram p CMSSW CMSSW_9_3_1
+cd CMSSW_9_3_1/src
+```
