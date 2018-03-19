@@ -11,8 +11,8 @@ scram p CMSSW CMSSW_9_3_4
 cd CMSSW_9_3_4/src
 cmsenv
 git-cms-init
-git clone git@github.com:jedori0228/sample_production.git RunIIFall17MiniAOD-94X_mc2017_realistic__LHE__TO__GEN-SIM
-cd RunIIFall17MiniAOD-94X_mc2017_realistic__LHE__TO__GEN-SIM
+git clone git@github.com:jedori0228/sample_production.git sample_production
+cd sample_production
 git checkout -b RunIIFall17MiniAOD-94X_mc2017_realistic__LHE__TO__GEN-SIM origin/RunIIFall17MiniAOD-94X_mc2017_realistic__LHE__TO__GEN-SIM
 ```
 Go to a separate directory to clone genproduction
@@ -27,7 +27,7 @@ cd $CMSSW_BASE/src
 mkdir -p Configuration/GenProduction/python/
 cp $NLO_HADRONIZER Configuration/GenProduction/python/
 scram b -j 8
-cd $CMSSW_BASE/src/RunIIFall17MiniAOD-94X_mc2017_realistic__LHE__TO__GEN-SIM
+cd $CMSSW_BASE/src/sample_production
 ```
 
 # Submitting Jobs with CRAB
@@ -40,7 +40,7 @@ e.g.,
 
 ```bash
 $ cat filelist.txt 
-PairProduction_MuMu_ZR3000_N200_WR5000_NLO /store/user/jskim/SE_UserHome/lhe/LRSM/PairProduction_MuMu_ZR3000_N200_WR5000_NLO/events.lhe 
+PairProduction_MuMu_ZR3000_N200_WR5000_NLO /store/user/jskim/lhe/LRSM/PairProduction_MuMu_ZR3000_N200_WR5000_NLO/events.lhe 
 ```
 
 Then, 
