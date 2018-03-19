@@ -6,13 +6,13 @@ RunIIFall17MiniAOD-94X_mc2017_realistic
 export VO_CMS_SW_DIR=/cvmfs/cms.cern.ch
 source $VO_CMS_SW_DIR/cmsset_default.sh
 export SCRAM_ARCH=slc6_amd64_gcc630
-scram p CMSSW CMSSW_9_3_1
-cd CMSSW_9_3_1/src
+scram p CMSSW CMSSW_9_3_4
+cd CMSSW_9_3_4/src
 cmsenv
 git-cms-init
 git clone git@github.com:jedori0228/sample_production.git
 cd sample_production
-git checkout -b CMSSW_9_3_1__LHE__TO__GEN-SIM origin/CMSSW_9_3_1__LHE__TO__GEN-SIM
+git checkout -b RunIIFall17MiniAOD-94X_mc2017_realistic__LHE__TO__GEN-SIM origin/RunIIFall17MiniAOD-94X_mc2017_realistic__LHE__TO__GEN-SIM
 ## Go to a separate directory to clone genproduction
 ## I will use home directory
 cd ~
