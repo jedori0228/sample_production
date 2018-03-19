@@ -15,7 +15,7 @@ for AAA in samples:
   lhefilepath = words[1]
 
   dirname = 'crab_'+sample
-  os.system('mkdir '+dirname)
+  os.system('mkdir -p '+dirname)
 
   cfg_skleton = open('skeletons/LHE__TO__GEN-SIM.py').readlines()
   output_cfg = open(dirname+'/LHE__TO__GEN-SIM__'+sample+'.py','w')
@@ -28,7 +28,8 @@ for AAA in samples:
   output_cfg.close()
 
   crabpy_skeleton = open('skeletons/crab_skeleton.py').readlines()
-  output_crabpy = open(dirname+'/crab_'+sample+'.py', 'w')
+  crab_file_name = 'crab_'+sample+'.py'
+  output_crabpy = open(dirname+'/'+crab_file_name, 'w')
   for line in crabpy_skeleton:
     if "##requestName##" in line:
       output_crabpy.write("config.General.requestName = '"+sample+"_CMSSW_9_3_4_GEN-SIM'\n")
@@ -40,3 +41,7 @@ for AAA in samples:
       output_crabpy.write(line)
   output_crabpy.close()
 
+  print '## '+sample
+  print 'cd '+dirname
+  print 'crab submit -c '+crab_file_name
+  print 'cd -'

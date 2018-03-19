@@ -10,8 +10,8 @@ scram p CMSSW CMSSW_9_3_4
 cd CMSSW_9_3_4/src
 cmsenv
 git-cms-init
-git clone git@github.com:jedori0228/sample_production.git
-cd sample_production
+git clone git@github.com:jedori0228/sample_production.git RunIIFall17MiniAOD-94X_mc2017_realistic__LHE__TO__GEN-SIM
+cd RunIIFall17MiniAOD-94X_mc2017_realistic__LHE__TO__GEN-SIM
 git checkout -b RunIIFall17MiniAOD-94X_mc2017_realistic__LHE__TO__GEN-SIM origin/RunIIFall17MiniAOD-94X_mc2017_realistic__LHE__TO__GEN-SIM
 ## Go to a separate directory to clone genproduction
 ## I will use home directory
@@ -22,5 +22,24 @@ cd $CMSSW_BASE/src
 mkdir -p Configuration/GenProduction/python/
 cp $NLO_HADRONIZER Configuration/GenProduction/python/
 scram b -j 8
-cd $CMSSW_BASE/src/sample_production
+cd $CMSSW_BASE/src/RunIIFall17MiniAOD-94X_mc2017_realistic__LHE__TO__GEN-SIM
+```
+
+# Submitting Jobs with CRAB
+```bash
+## Write a txt file with,
+## <Sample Alias> <lhefile path, starting with /store>
+## e.g.,
+$ cat filelist.txt 
+PairProduction_MuMu_ZR3000_N200_WR5000_NLO /store/user/jskim/SE_UserHome/lhe/LRSM/PairProduction_MuMu_ZR3000_N200_WR5000_NLO/events.lhe 
+## Then, 
+python make_crab_cfg.py &> script_crab_submit.sh
+## This create a script for submittion
+$ cat script_crab_submit.sh 
+## PairProduction_MuMu_ZR3000_N200_WR5000_NLO
+cd crab_PairProduction_MuMu_ZR3000_N200_WR5000_NLO
+crab submit -c crab_PairProduction_MuMu_ZR3000_N200_WR5000_NLO.py
+cd -
+## Then,
+source script_crab_submit.sh
 ```
