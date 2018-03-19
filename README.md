@@ -34,7 +34,7 @@ cd $CMSSW_BASE/src/RunIIFall17MiniAOD-94X_mc2017_realistic__LHE__TO__GEN-SIM
 
 Write a txt file with,
 
-<Sample Alias> <lhefile path, starting with /store>
+\<Sample Alias\> \<lhefile path, starting with /store\>
 
 e.g.,
 
