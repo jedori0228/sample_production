@@ -28,6 +28,18 @@ mkdir -p Configuration/GenProduction/python/
 cp $NLO_HADRONIZER Configuration/GenProduction/python/
 scram b -j 8
 cd $CMSSW_BASE/src/sample_production
+cmsDriver.py Configuration/GenProduction/python/Hadronizer_TuneCP5_13TeV_aMCatNLO_0p_LHE_pythia8_cff.py \
+--filein file:events.lhe \
+--fileout GEN-SIM.root \
+--mc --eventcontent RAWSIM --datatier GEN-SIM \
+--conditions 93X_mc2017_realistic_v3 \
+--beamspot Realistic25ns13TeVEarly2017Collision \
+--step GEN,SIM \
+--nThreads 8 \
+--geometry DB:Extended \
+--era Run2_2017 \
+--python_filename LHE__TO__GEN-SIM.py \
+--no_exec -n 697
 ```
 
 # Submitting Jobs with CRAB
