@@ -1,8 +1,7 @@
 RunIIFall17MiniAOD-94X_mc2017_realistic
 ====
 
-LHE to GEN-SIM
-Base on [HIG-RunIIFall17wmLHEGS-00304](https://cms-pdmv.cern.ch/mcm/chained_requests?contains=HIG-RunIIFall17wmLHEGS-00304&page=0)
+LHE to GEN-SIM : Base on [HIG-RunIIFall17wmLHEGS-00304](https://cms-pdmv.cern.ch/mcm/requests?prepid=HIG-RunIIFall17wmLHEGS-00304&page=0&shown=127)
 
 # Setup
 
