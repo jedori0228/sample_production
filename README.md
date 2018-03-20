@@ -27,7 +27,7 @@ cfg file for "GEN-SIM to HLT"
 ```bash
 cd $CMSSW_BASE/src/sample_production/GEN-SIM__TO__HLT/
 cmsDriver.py step1 \
---filein file:GEN-SIM.root
+--filein file:GEN-SIM.root \
 --fileout HLT.root  \
 --pileup_input pu.root \
 --mc \
