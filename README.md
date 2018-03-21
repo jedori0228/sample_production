@@ -8,3 +8,8 @@
     * SIM to RAWSIM
     * RAWSIM to AODSIM
     * AODSIM to MiniAOD
+# RunIIFall17MiniAOD-94X_mc2017_realistic
+  * RunIIFall17MiniAOD-94X_mc2017_realistic__GEN-SIM__TO__MiniAOD
+    * LHE to GEN-SIM
+  * RunIIFall17MiniAOD-94X_mc2017_realistic__GEN-SIM__TO__MiniAOD
+    * GEN-SIM to MiniAOD
