@@ -9,7 +9,7 @@
     * RAWSIM to AODSIM
     * AODSIM to MiniAOD
 # RunIIFall17MiniAOD-94X_mc2017_realistic
-  * [RunIIFall17MiniAOD-94X_mc2017_realistic__GEN-SIM__TO__MiniAOD](https://github.com/jedori0228/sample_production/tree/RunIIFall17MiniAOD-94X_mc2017_realistic__LHE__TO__GEN-SIM)
+  * [RunIIFall17MiniAOD-94X_mc2017_realistic__LHE__TO__GEN-SIM](https://github.com/jedori0228/sample_production/tree/RunIIFall17MiniAOD-94X_mc2017_realistic__LHE__TO__GEN-SIM)
     * LHE to GEN-SIM
   * [RunIIFall17MiniAOD-94X_mc2017_realistic__GEN-SIM__TO__MiniAOD](https://github.com/jedori0228/sample_production/tree/RunIIFall17MiniAOD-94X_mc2017_realistic__GEN-SIM__TO__MiniAOD)
     * GEN-SIM to MiniAOD
