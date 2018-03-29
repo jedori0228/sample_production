@@ -42,6 +42,23 @@ cmsDriver.py step1 \
 -n 1751
 ```
 
+cfg file for "HLT to AODSIM"
+
+```bash
+cmsDriver.py step2 \
+--filein HLT.root \
+--fileout AODSIM.root \
+--mc \
+--eventcontent AODSIM runUnscheduled \
+--datatier AODSIM \
+--conditions 94X_mc2017_realistic_v10 \
+--step RAW2DIGI,RECO,RECOSIM,EI \
+--nThreads 8 --era Run2_2017 \
+--python_filename HLT__TO__AODSIM.py \
+--no_exec \
+-n 1751
+```
+
 # Submitting Jobs with CRAB
 
 Write a txt file with das names of samples
