@@ -44,3 +44,33 @@ cmsDriver.py step1 \
 
 # Submitting Jobs with CRAB
 
+Write a txt file with das names of samples
+
+e.g.,
+
+```bash
+$ cat filelist.txt 
+/TEST_CRAB/jskim-CMSSW_9_3_4_GEN-SIM-93765d8a8aae3b1e637eb3e94c7ca04e/USER
+```
+
+Then, 
+
+```bash
+python make_crab_cfg.py &> script_crab_submit.sh
+```
+
+This create a script for submittion
+
+```bash
+$ cat script_crab_submit.sh 
+## TEST_CRAB
+cd crab_TEST_CRAB
+crab submit -c crab_TEST_CRAB.py
+cd -
+```
+
+Then,
+
+```bash
+source script_crab_submit.sh
+```
