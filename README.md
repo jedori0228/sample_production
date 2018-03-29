@@ -59,6 +59,26 @@ cmsDriver.py step2 \
 -n 1751
 ```
 
+cfg file for "AODSIM to MINIAODSIM"
+
+```bash
+cmsDriver.py step1 \
+--filein file:AODSIM.root \
+--fileout MINIAODSIM.root \
+--mc \
+--eventcontent MINIAODSIM \
+--runUnscheduled \
+--datatier MINIAODSIM \
+--conditions 94X_mc2017_realistic_v10 \
+--step PAT \
+--nThreads 8 \
+--era Run2_2017 \
+--python_filename AODSIM__TO__MINIAODSIM.py \
+--no_exec \
+-n 4800
+
+```
+
 # Submitting Jobs with CRAB
 
 Write a txt file with das names of samples
