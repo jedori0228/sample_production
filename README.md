@@ -13,3 +13,6 @@
     * LHE to GEN-SIM
   * [RunIIFall17MiniAOD-94X_mc2017_realistic__GEN-SIM__TO__MiniAOD](https://github.com/jedori0228/sample_production/tree/RunIIFall17MiniAOD-94X_mc2017_realistic__GEN-SIM__TO__MiniAOD)
     * GEN-SIM to MiniAOD
+# RunIIFall17MiniAODv2-PU2017_12Apr2018_94X_mc2017_realistic
+  * [RunIIFall17MiniAODv2-PU2017_12Apr2018_94X_mc2017_realistic__RECO__TO__MiniAOD](https://github.com/jedori0228/sample_production/tree/RunIIFall17MiniAODv2-PU2017_12Apr2018_94X_mc2017_realistic__RECO__TO__MiniAOD)
+    * RECO to MiniAOD (previous steps are same as RunIIFall17MiniAOD-94X_mc2017_realistic)
