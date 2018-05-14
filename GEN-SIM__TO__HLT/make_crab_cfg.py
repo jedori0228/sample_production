@@ -22,6 +22,8 @@ for AAA in samples:
   cfg_skleton = open('skeletons/GEN-SIM__TO__HLT.py').readlines()
   output_cfg = open(dirname+'/GEN-SIM__TO__HLT__'+sample+'.py','w')
   for line in cfg_skleton:
+
+    ## https://hypernews.cern.ch/HyperNews/CMS/get/computing-tools/3859/1/1/1/1/1.html
     if "##MINBIAS_HERE##" in line:
 
       lines = open('MinBias.txt').readlines()
