@@ -20,4 +20,4 @@ config.Data.outLFNDirBase = '/store/user/%s/' % (getUsernameFromSiteDB())
 config.Data.publication = True
 config.Data.outputDatasetTag = 'CMSSW_9_4_0_patch1_AODSIM'
 
-config.Site.storageSite = 'T2_KR_KNU'
+config.Site.storageSite = 'T3_KR_KNU'
