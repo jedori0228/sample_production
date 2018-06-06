@@ -9,6 +9,9 @@ samples = open(txtfilename).readlines()
 
 for AAA in samples:
 
+  if "#" in AAA:
+    continue
+
   words = AAA.split()
 
   sample = words[0]
