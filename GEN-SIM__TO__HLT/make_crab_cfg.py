@@ -12,6 +12,9 @@ for AAA in samples:
 
   AAA = AAA.strip('\n')
 
+  if "#" in AAA:
+    continue
+
   words = AAA.split('/')
 
   sample = words[1]

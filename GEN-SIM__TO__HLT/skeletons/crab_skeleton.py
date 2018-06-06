@@ -9,7 +9,7 @@ config.General.transferOutputs = True
 
 config.JobType.pluginName = 'Analysis'
 ##psetName## E.g., config.JobType.psetName = 'SIM_to_RAWSIM.py'
-config.JobType.numCores = 8
+config.JobType.numCores = 4
 config.JobType.maxMemoryMB = 4000
 
 ##inputDataset## E.g., config.Data.inputDataset = '/MajoranaNeutrinoToMuMuMu_M-150/jskim-CMSSW_7_1_18_GEN-SIM-c2345211336d5844e3ea1a8a7fbfc845/USER'
