@@ -21,5 +21,5 @@ config.Data.publication = True
 config.Data.outputDatasetTag = 'CMSSW_9_4_0_patch1_HLT'
 config.Data.ignoreLocality = True
 
-config.Site.storageSite = 'T3_KR_KNU'
+config.Site.storageSite = 'T2_KR_KNU'
 config.Site.whitelist = ['T2_CH_CERN', 'T2_US_Nebraska']
