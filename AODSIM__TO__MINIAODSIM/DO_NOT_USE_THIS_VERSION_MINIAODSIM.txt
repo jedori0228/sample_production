@@ -1,0 +1,2 @@
+This one is 94X MiniAODv1. MiniAODv2 is released.
+https://github.com/jedori0228/sample_production/tree/RunIIFall17MiniAODv2-PU2017_12Apr2018_94X_mc2017_realistic__RECO__TO__MiniAOD
