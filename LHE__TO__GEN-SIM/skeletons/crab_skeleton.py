@@ -9,7 +9,8 @@ config.General.transferOutputs = True
 
 config.JobType.pluginName = 'PrivateMC'
 ##psetName## E.g., config.JobType.psetName = 'GEN-SIM_crab.py'
-config.JobType.numCores = 8
+config.JobType.numCores = 4
+config.JobType.maxMemoryMB = 4000
 
 ##outputPrimaryDataset## E.g., config.Data.outputPrimaryDataset = 'MajoranaNeutrinoToMuMuMu_M-40'
 config.Data.outLFNDirBase = '/store/user/%s/' % (getUsernameFromSiteDB())
@@ -22,3 +23,4 @@ config.Data.totalUnits = config.Data.unitsPerJob * NJOBS
 config.Data.publication = True
 
 config.Site.storageSite = 'T2_KR_KNU'
+config.Site.blacklist = ['T3_US_UMiss', 'T3_US_UCR', 'T2_RU_PNPI', 'T2_RU_INR', 'T2_RU_IHEP', 'T2_IT_Rome', 'T2_CN_Beijing']
